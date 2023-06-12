@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6649bb816494ad4a9a5902d3958b2f0, type: 3}
+  m_Name: GemPool 3
+  m_EditorClassIdentifier: 
+  PoolName: gem3
+  PoolId: 0
+  Prefab: {fileID: 9197168018941680232, guid: 67682754450a7654488764f5d34328a5, type: 3}
+  initSize: 20
+  maxSize: 0
+  ExtendModel: 2
+  poolIndex: 3

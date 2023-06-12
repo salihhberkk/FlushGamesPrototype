@@ -11,8 +11,8 @@ public class StackManager : MonoBehaviour
     {
         gems.Add(newGem);
         newGem.transform.SetParent(stackTransform.transform);
+        newGem.transform.localRotation = Quaternion.Euler(Vector3.zero);
         newGem.transform.DOLocalJump(Helper.Help(0, gems.Count, 0), 0.1f, 1, 1f).SetEase(Ease.OutBounce);
-        //newGem.transform.position = stackTransform.position + Helper.Help(0, gems.Count, 0);
     }
     public void RemoveGem(Transform removePoint)
     {
