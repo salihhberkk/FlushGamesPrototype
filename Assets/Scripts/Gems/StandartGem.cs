@@ -9,10 +9,15 @@ public class StandartGem : MonoBehaviour
     public float gemStartSellMoney;
     public Sprite gemIcon;
     public PoolInfoWithPool gemPool;
+    public PoolInfoWithPool flyingCanvasPool;
+    public PoolInfoWithPool destroyParticlePool;
 
     private bool isCollect = true;
     private Grid baseGrid;
     private Collider col;
+    private GameObject flyingCanvas;
+    private GameObject destroyParticle;
+
 
     private void Awake()
     {
@@ -42,20 +47,39 @@ public class StandartGem : MonoBehaviour
              isCollect = false;
              SetCollider(true);
          }
+     }).OnComplete(() =>
+     {
+         transform.DOPunchScale(Helper.Help(0.35f, 0.35f, 0.35f), 0.35f);
      });
     }
+
+    private float totalMoney = 0f;
     public void RemoveGem(Transform removePoint)
     {
+        totalMoney = gemStartSellMoney + transform.localScale.x * 100f;
+
         transform.SetParent(null);
         transform.DOJump(removePoint.position, 1f, 1, 1f).OnComplete(() =>
         {
-            UIManager.Instance.AddMoney(gemStartSellMoney + transform.localScale.x * 100f);
+            DestroyGem();
+
+            UIManager.Instance.AddMoney(totalMoney);
             SetCollider(false);
-
-            GetComponent<PoolObject>().Release();
-
-            //gameObject.SetActive(false);
         });
+    }
+    private void DestroyGem()
+    {
+        flyingCanvas = flyingCanvasPool.Fetch();
+        flyingCanvas.transform.position = transform.position + Helper.Help(Random.Range(-1.5f, 1.5f), 0.5f, Random.Range(-1.5f, 1.5f));
+        flyingCanvas.SetActive(true);
+        flyingCanvas.GetComponent<FlyingCanvas>().SetText(totalMoney);
+        flyingCanvas.GetComponent<FlyingCanvas>().FlyText();
+
+        destroyParticle = destroyParticlePool.Fetch();
+        destroyParticle.transform.position = transform.position + Helper.Help(0, 0.5f, 0);
+        destroyParticle.SetActive(true);
+        destroyParticle.GetComponent<ParticleSystemRenderer>().material = GetComponent<Renderer>().material;
+        GetComponent<PoolObject>().Release();
     }
     private void SetCollider(bool value)
     {

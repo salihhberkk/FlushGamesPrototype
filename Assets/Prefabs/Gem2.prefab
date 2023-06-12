@@ -115,6 +115,8 @@ MonoBehaviour:
   gemStartSellMoney: 3
   gemIcon: {fileID: 21300000, guid: 34003ce9f7907a8458d0ae80419d656f, type: 3}
   gemPool: {fileID: 11400000, guid: 846761fa30c3d0446936caaa0e0cd3c8, type: 2}
+  flyingCanvasPool: {fileID: 11400000, guid: 1ccdc911ed2a72247b16d7f205efcaf0, type: 2}
+  destroyParticlePool: {fileID: 11400000, guid: 3973dcbeb70cf1c4eac812a345a2a66a, type: 2}
 --- !u!114 &5871648159070158048
 MonoBehaviour:
   m_ObjectHideFlags: 0

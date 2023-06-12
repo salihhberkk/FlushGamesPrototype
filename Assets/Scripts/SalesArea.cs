@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SalesArea : MonoBehaviour
 {
+    [SerializeField] private Transform gemDestroyTransform;
     [SerializeField] private float salesDelay = 1f;
     private bool startSale = false;
     private float delayCounter;
@@ -19,7 +20,7 @@ public class SalesArea : MonoBehaviour
         if (delayCounter <= 0 && startSale)
         {
             // sell gem
-            StackManager.Instance.RemoveGem(transform);
+            StackManager.Instance.RemoveGem(gemDestroyTransform);
             ResetCounter();
         }
     }
