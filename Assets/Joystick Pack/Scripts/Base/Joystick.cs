@@ -65,8 +65,8 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public bool test = true;
     public void OnDrag(PointerEventData eventData)
     {
-        if (!test)
-            return;
+        /*if (!test)
+            return;*/
         cam = null;
         if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
             cam = canvas.worldCamera;
@@ -163,6 +163,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     }
     public bool BackgroundInfo()
     {
+        Debug.Log(" dsad" + background.gameObject.activeSelf);
         if (background.gameObject.activeSelf == true)
             return true;
         else

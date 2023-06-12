@@ -31,23 +31,19 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
     {
         if (!gameStart)
             return;
-
         JoystickMovement();
-        if (Input.GetMouseButtonDown(0) && joystick.BackgroundInfo())
-        {
-            animator.SetRunAnim();
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            animator.SetIdleAnim();
-        }
     }
     public void JoystickMovement()
     {
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;
 
-        Vector3 addedPos = new Vector3(horizontal * speed * Time.deltaTime, 0, vertical * speed * Time.deltaTime);
+        if (horizontal != 0 || vertical != 0)
+            animator.SetRunAnim();
+        else if (horizontal == 0 && vertical == 0)
+            animator.SetIdleAnim();
+
+        Vector3 addedPos = Helper.Help(horizontal * speed * Time.deltaTime, 0, vertical * speed * Time.deltaTime);
         transform.position += addedPos;
 
         Vector3 direction = Vector3.forward * vertical + Vector3.right * horizontal;

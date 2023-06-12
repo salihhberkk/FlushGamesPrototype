@@ -10,8 +10,6 @@ public class PlayerAnimator : MonoSingleton<PlayerAnimator>
     {
         Idle = 0,
         Run = 1,
-        FallBack = 2,
-        StandUp = 3
     }
     private void Start()
     {
