@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6649bb816494ad4a9a5902d3958b2f0, type: 3}
-  m_Name: GemPool 2
+  m_Name: GemPool 4
   m_EditorClassIdentifier: 
-  PoolName: gem2
+  PoolName: gem4
   PoolId: 0
-  Prefab: {fileID: 7648731250793144054, guid: 4db5ffcebefb13f49b3e0631a1f3e489, type: 3}
+  Prefab: {fileID: 9197168018941680232, guid: b696a5ea29048144ca9e1c7a419c21ee, type: 3}
   initSize: 10
   maxSize: 0
   ExtendModel: 2
-  poolIndex: 2
+  poolIndex: 3
