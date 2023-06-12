@@ -56,6 +56,8 @@ public class StandartGem : MonoBehaviour
     private float totalMoney = 0f;
     public void RemoveGem(Transform removePoint)
     {
+        GemInfoCanvas.Instance.SetCountTexts(gemName);
+ 
         totalMoney = gemStartSellMoney + transform.localScale.x * 100f;
 
         transform.SetParent(null);

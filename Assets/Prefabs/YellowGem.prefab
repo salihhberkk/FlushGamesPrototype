@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9037938733182813274}
   - component: {fileID: 8097513712465539343}
   m_Layer: 6
-  m_Name: Gem3
+  m_Name: YellowGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920b827b3c087a24e8875550117feae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemName: yellowGem
+  gemName: Yellow Gem
   gemStartSellMoney: 5
   gemIcon: {fileID: 21300000, guid: 53a369d8bae21eb43ac94eaf0f49fff8, type: 3}
   gemPool: {fileID: 11400000, guid: e53f2d21f601e224680bcea2b86c5b68, type: 2}
