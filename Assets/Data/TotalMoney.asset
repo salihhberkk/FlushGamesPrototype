@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TotalMoney
   m_EditorClassIdentifier: 
   id: totalMoney
-  value: 10
+  value: 0
   Name: 

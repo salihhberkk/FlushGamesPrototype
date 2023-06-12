@@ -20,7 +20,7 @@ public class StandartGem : MonoBehaviour
     }
     private void Start()
     {
-        col.enabled = false;
+        SetCollider(false);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -32,10 +32,6 @@ public class StandartGem : MonoBehaviour
         other.GetComponent<StackManager>().AddGem(this);
         baseGrid.RecreateGem(gemPool);
     }
-    public void SetCollect()
-    {
-        isCollect = false;
-    }
     public void GrowUp(Grid _baseGrid)
     {
         baseGrid = _baseGrid;
@@ -44,8 +40,25 @@ public class StandartGem : MonoBehaviour
          if (transform.localScale.x >= 0.25f)
          {
              isCollect = false;
-             col.enabled = true;
+             SetCollider(true);
          }
      });
+    }
+    public void RemoveGem(Transform removePoint)
+    {
+        transform.SetParent(null);
+        transform.DOJump(removePoint.position, 1f, 1, 1f).OnComplete(() =>
+        {
+            UIManager.Instance.AddMoney(gemStartSellMoney + transform.localScale.x * 100f);
+            SetCollider(false);
+
+            GetComponent<PoolObject>().Release();
+
+            //gameObject.SetActive(false);
+        });
+    }
+    private void SetCollider(bool value)
+    {
+        col.enabled = value;
     }
 }

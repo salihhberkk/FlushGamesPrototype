@@ -15,7 +15,7 @@ MonoBehaviour:
   PoolName: gem2
   PoolId: 0
   Prefab: {fileID: 7648731250793144054, guid: 4db5ffcebefb13f49b3e0631a1f3e489, type: 3}
-  initSize: 20
+  initSize: 2
   maxSize: 0
   ExtendModel: 2
   poolIndex: 2

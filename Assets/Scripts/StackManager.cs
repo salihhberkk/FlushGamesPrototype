@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class StackManager : MonoBehaviour
+public class StackManager : MonoSingleton<StackManager>
 {
     [SerializeField] private Transform stackTransform;
     [SerializeField] private List<StandartGem> gems = new();
@@ -16,17 +16,9 @@ public class StackManager : MonoBehaviour
     }
     public void RemoveGem(Transform removePoint)
     {
-        StartCoroutine(StartRemoveGem(removePoint));
-    }
-    IEnumerator StartRemoveGem(Transform removePoint)
-    {
-        while (true)
-        {
-            gems[gems.Count - 1].transform.DOMove(removePoint.position, 1f).OnComplete(() =>
-           {
-
-           });
-            gems.RemoveAt(gems.Count - 1);
-        }
+        if (gems.Count == 0)
+            return;
+        gems[gems.Count - 1].RemoveGem(removePoint);
+        gems.RemoveAt(gems.Count - 1);
     }
 }
