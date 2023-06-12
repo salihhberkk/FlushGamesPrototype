@@ -70,4 +70,8 @@ public class GamePanel : Panel
             Haptic.Instance.HapticOn();
         }
     }
+    public void OpenGemInfoCanvas()
+    {
+        GemInfoCanvas.Instance.OpenInfoPanel();
+    }
 }
