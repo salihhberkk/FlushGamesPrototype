@@ -7,8 +7,14 @@ public class StackManager : MonoSingleton<StackManager>
 {
     [SerializeField] private Transform stackTransform;
     [SerializeField] private List<StandartGem> gems = new();
+    private CameraFollower CameraFollower;
+    private void Start()
+    {
+        CameraFollower = CameraFollower.Instance;
+    }
     public void AddGem(StandartGem newGem)
     {
+        CameraFollower.MoveUp();
         gems.Add(newGem);
         newGem.transform.SetParent(stackTransform.transform);
         newGem.transform.localRotation = Quaternion.Euler(Vector3.zero);
@@ -18,6 +24,7 @@ public class StackManager : MonoSingleton<StackManager>
     {
         if (gems.Count == 0)
             return;
+        CameraFollower.MoveDown();
         gems[gems.Count - 1].RemoveGem(removePoint);
         gems.RemoveAt(gems.Count - 1);
     }

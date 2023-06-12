@@ -17,10 +17,12 @@ public class CameraFollower : MonoSingleton<CameraFollower>
 
         transform.position = smoothedPos;
     }
-    public void SetTarget(GameObject target)
+    public void MoveUp()
     {
-        player = target;
-        transform.position = new Vector3(0f, transform.position.y, transform.position.z);
-        offset = new Vector3(0, offset.y, offset.z);
+        offset += new Vector3(0, 0.5f, -0.25f);
+    }
+    public void MoveDown()
+    {
+        offset -= new Vector3(0, 0.5f, -0.25f);
     }
 }
