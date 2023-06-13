@@ -17,12 +17,12 @@ public class CameraFollower : MonoSingleton<CameraFollower>
 
         transform.position = smoothedPos;
     }
-    public void MoveUp()
+    public void MoveUp(float addYvalue)
     {
-        offset += new Vector3(0, 0.5f, -0.25f);
+        offset += new Vector3(0, addYvalue, -(addYvalue / 2f));
     }
-    public void MoveDown()
+    public void MoveDown(float removeYvalue)
     {
-        offset -= new Vector3(0, 0.5f, -0.25f);
+        offset -= new Vector3(0, removeYvalue, -(removeYvalue / 2f));
     }
 }

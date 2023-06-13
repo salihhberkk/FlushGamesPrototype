@@ -18,7 +18,6 @@ public class StandartGem : MonoBehaviour
     private GameObject flyingCanvas;
     private GameObject destroyParticle;
 
-
     private void Awake()
     {
         col = GetComponent<Collider>();
