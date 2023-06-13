@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4221138157576860169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4221138157576860170}
+  - component: {fileID: 4221138157576860171}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4221138157576860170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221138157576860169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4221138157576860171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221138157576860169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b33f67db018a7ef47b2cb0b0bd573e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolCreateList: {fileID: 0}
+  CreationList:
+  - {fileID: 11400000, guid: ba9167df4d89f3d438bc0ddcba4bd685, type: 2}
+  - {fileID: 11400000, guid: 55fc4deef2de62645ae4ac9212ede792, type: 2}
+  - {fileID: 11400000, guid: 846761fa30c3d0446936caaa0e0cd3c8, type: 2}
+  - {fileID: 11400000, guid: e53f2d21f601e224680bcea2b86c5b68, type: 2}
+  - {fileID: 11400000, guid: e73355a29d512584ba92701a91b6e100, type: 2}
+  - {fileID: 11400000, guid: 494fd43bb111f8a4da6cfbfe7660e04f, type: 2}
+  - {fileID: 11400000, guid: 1ccdc911ed2a72247b16d7f205efcaf0, type: 2}
+  - {fileID: 11400000, guid: 3973dcbeb70cf1c4eac812a345a2a66a, type: 2}
+  pools: []
+  createOnStart: 1
+  SetParentNull: 0
